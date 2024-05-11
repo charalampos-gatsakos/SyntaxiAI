@@ -1,3 +1,5 @@
+import { sources } from "next/dist/compiled/webpack/webpack";
+
 export const navLinks = [
   {
     label: "Home",
@@ -47,10 +49,10 @@ export const plans = [
     name: "Free",
     icon: "/assets/icons/free-plan.svg",
     price: 0,
-    credits: 20,
+    credits: 5,
     inclusions: [
       {
-        label: "20 Free Credits",
+        label: "5 Free Credits",
         isIncluded: true,
       },
       {
@@ -71,7 +73,7 @@ export const plans = [
     _id: 2,
     name: "Pro Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 0.5,
+    price: 1,
     credits: 20,
     inclusions: [
       {
@@ -96,8 +98,8 @@ export const plans = [
     _id: 3,
     name: "Premium Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 10,
-    credits: 200,
+    price: 5,
+    credits: 150,
     inclusions: [
       {
         label: "200 Credits",

@@ -70,10 +70,14 @@ const Sidebar = () => {
           </SignedIn>
 
           <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
+            <Button className="button bg-purple-gradient bg-cover">
               <Link href="/sign-in">Login</Link>
             </Button>
+            <Button className="button bg-purple-gradient bg-cover">
+              <Link href="/sign-up">SignUp</Link>
+            </Button>
           </SignedOut>
+
         </nav>
       </div>
     </aside>
