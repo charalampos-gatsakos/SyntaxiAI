@@ -24,11 +24,13 @@ export const Collection = ({
     images,
     totalPages = 1,
     page,
+    editsName = 'Recent Edits',
 }: {
     images: IImage[];
     totalPages?: number;
     page: number;
     hasSearch?: boolean;
+    editsName?: string
 }) => {
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -49,7 +51,7 @@ export const Collection = ({
     return (
         <>
             <div className="collection-heading">
-                <h2 className="h2-bold text-dark-600">Recent Edits</h2>
+                <h2 className="h2-bold text-dark-600">{editsName}</h2>
                 {hasSearch && <Search />}
             </div>
 

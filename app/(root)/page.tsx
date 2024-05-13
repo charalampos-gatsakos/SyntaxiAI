@@ -1,14 +1,24 @@
 import { Collection } from "@/components/shared/Collection"
 import { navLinks } from "@/constants"
-import { getAllImages } from "@/lib/actions/image.actions"
+import { getUserImages } from "@/lib/actions/image.actions"
+import { getUserById } from "@/lib/actions/user.actions"
+import { auth } from "@clerk/nextjs/server"
 import Image from "next/image"
 import Link from "next/link"
+import { string } from "zod"
 
 const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
   const searchQuery = (searchParams?.query as string) || '';
 
-  const images = await getAllImages({ page, searchQuery })
+  let demoName;
+  let { userId } = auth();
+  if (!userId) {
+    demoName = 'Demo Edits';
+    userId = 'user_2gKXD4isZQkumlx1UWZsQ2t8yTD';
+  }
+  const user = await getUserById(userId);
+  const images = await getUserImages({ page, userId: user._id });
 
   return (
     <>
@@ -36,7 +46,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         <Collection
           hasSearch={true}
           images={images?.data}
-          totalPages={images?.totalPage}
+          editsName={demoName}
           page={page}
         />
       </section>

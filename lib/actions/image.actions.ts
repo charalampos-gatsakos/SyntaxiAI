@@ -180,3 +180,35 @@ export async function getUserImages({
     handleError(error);
   }
 }
+
+// GET IMAGES BY DEMO USER
+export async function getDemoUserImages({
+  limit = 9,
+  page = 1,
+  demoUserId,
+}: {
+  limit?: number;
+  page: number;
+  demoUserId: string;
+}) {
+  try {
+    await connectToDatabase();
+
+    const skipAmount = (Number(page) - 1) * limit;
+
+    // Fetch images for the demo user
+    const images = await populateUser(Image.find({ author: demoUserId }))
+      .sort({ updatedAt: -1 })
+      .skip(skipAmount)
+      .limit(limit);
+
+    const totalImages = await Image.find({ author: demoUserId }).countDocuments();
+
+    return {
+      data: JSON.parse(JSON.stringify(images)),
+      totalPages: Math.ceil(totalImages / limit),
+    };
+  } catch (error) {
+    handleError(error);
+  }
+}
