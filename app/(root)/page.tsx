@@ -1,6 +1,6 @@
 import { Collection } from "@/components/shared/Collection"
 import { navLinks } from "@/constants"
-import { getUserImages } from "@/lib/actions/image.actions"
+import { getAllImages, getUserImages } from "@/lib/actions/image.actions"
 import { getUserById } from "@/lib/actions/user.actions"
 import { auth } from "@clerk/nextjs/server"
 import Image from "next/image"
@@ -9,7 +9,7 @@ import { string } from "zod"
 
 const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
-  const searchQuery = (searchParams?.query as string) || '';
+
 
   let demoName;
   let { userId } = auth();
