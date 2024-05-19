@@ -10,7 +10,6 @@ import { string } from "zod"
 const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
 
-
   let demoName;
   let { userId } = auth();
   if (!userId) {
