@@ -24,14 +24,14 @@ const Sidebar = () => {
                 const isActive = link.route === pathname
 
                 return (
-                  <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'
+                  <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-gradient-to-r from-blue-400 to-blue-700 text-white' : 'text-gray-900'
                     }`}>
                     <Link className="sidebar-link" href={link.route}>
                       <Image
                         src={link.icon}
                         alt="logo"
-                        width={23}
-                        height={23}
+                        width={25}
+                        height={25}
                         className={`${isActive && 'brightness-200'}`}
                       />
                       {link.label}
@@ -53,8 +53,8 @@ const Sidebar = () => {
                       <Image
                         src={link.icon}
                         alt="logo"
-                        width={23}
-                        height={23}
+                        width={25}
+                        height={25}
                         className={`${isActive && 'brightness-200'}`}
                       />
                       {link.label}
@@ -70,12 +70,14 @@ const Sidebar = () => {
           </SignedIn>
 
           <SignedOut>
-            <Button className="button bg-purple-gradient bg-cover">
-              <Link href="/sign-in">Login</Link>
-            </Button>
-            <Button className="button bg-purple-gradient bg-cover">
-              <Link href="/sign-up">SignUp</Link>
-            </Button>
+            <div>
+              <Button className="button bg-gradient-to-r from-blue-400">
+                <Link href="/sign-in">Login</Link>
+              </Button>
+              <Button className="button bg-gradient-to-r from-blue-500">
+                <Link href="/sign-up">SignUp</Link>
+              </Button>
+            </div>
           </SignedOut>
 
         </nav>

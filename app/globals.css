@@ -189,7 +189,7 @@
   }
 
   .submit-button {
-    @apply bg-purple-gradient bg-cover rounded-full py-4 px-6 p-16-semibold h-[50px] w-full md:h-[54px];
+    @apply bg-gradient-to-r from-blue-400 to-blue-900 rounded-full py-4 px-6 p-16-semibold h-[50px] w-full md:h-[54px];
   }
 
   .select-field {
@@ -222,7 +222,7 @@
 
   /* Home Page */
   .home {
-    @apply sm:flex-center hidden h-72 flex-col gap-4 rounded-[20px] border bg-banner bg-cover bg-no-repeat p-10 shadow-inner;
+    @apply sm:flex-center hidden h-72 flex-col gap-4 rounded-[20px] border bg-gradient-to-r from-blue-400 to-blue-900 p-10 shadow-inner;
   }
 
   .home-heading {
@@ -317,9 +317,24 @@
     @apply hidden h-screen w-72 bg-white p-5 shadow-md shadow-purple-200/50 lg:flex;
   }
 
+  .sidebar .button {
+    width: 100%;
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  .sidebar .ign-out-btn {
+    width: 100%;
+  }
+
   .sidebar-logo {
     @apply flex items-center gap-2 md:py-2;
     padding-left: 3rem;
+  }
+
+  .sign-out-btn {
+    @apply items-center;
+    padding-bottom: 100rem;
   }
 
   .sidebar-nav {
@@ -331,7 +346,7 @@
   }
 
   .sidebar-nav_element {
-    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-purple-100 hover:shadow-inner;
+    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-blue-200 hover:shadow-inner;
   }
 
   .sidebar-link {
