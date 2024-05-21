@@ -15,10 +15,10 @@ const MobileNav = () => {
         <header className="header">
             <Link href="/" className="flex items-center gap-2 md:py-2">
                 <Image
-                    src="/assets/images/logo-text.svg"
+                    src="/assets/images/logo-name.svg"
                     alt="logo"
-                    width={180}
-                    height={28}
+                    width={250}
+                    height={20}
                 />
             </Link>
 
@@ -31,18 +31,18 @@ const MobileNav = () => {
                             <Image
                                 src="/assets/icons/menu.svg"
                                 alt="menu"
-                                width={32}
-                                height={32}
+                                width={45}
+                                height={45}
                                 className="cursor-pointer"
                             />
                         </SheetTrigger>
                         <SheetContent className="sheet-content sm:w-64">
                             <>
                                 <Image
-                                    src="/assets/images/logo-text.svg"
+                                    src="/assets/images/logo-name.svg"
                                     alt="logo"
-                                    width={152}
-                                    height={23}
+                                    width={280}
+                                    height={20}
                                 />
 
                                 <ul className="header-nav_elements">
@@ -50,16 +50,15 @@ const MobileNav = () => {
                                         const isActive = link.route === pathname
 
                                         return (
-                                            <li
-                                                className={`${isActive && 'gradient-text'} p-18 flex whitespace-nowrap text-dark-700`}
-                                                key={link.route}
-                                            >
+                                            <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-gradient-to-r from-blue-400 to-blue-700 text-white' : 'text-gray-900'
+                                                }`}>
                                                 <Link className="sidebar-link cursor-pointer" href={link.route}>
                                                     <Image
                                                         src={link.icon}
                                                         alt="logo"
-                                                        width={24}
-                                                        height={24}
+                                                        width={35}
+                                                        height={35}
+                                                        className={`${isActive && 'brightness-200'}`}
                                                     />
                                                     {link.label}
                                                 </Link>
