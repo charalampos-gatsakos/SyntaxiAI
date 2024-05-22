@@ -22,7 +22,7 @@ const MobileNav = () => {
                 />
             </Link>
 
-            <nav className="flex gap-2">
+            <nav className="flex ">
                 <SignedIn>
                     <UserButton afterSignOutUrl="/" />
 
@@ -41,8 +41,8 @@ const MobileNav = () => {
                                 <Image
                                     src="/assets/images/logo-name.svg"
                                     alt="logo"
-                                    width={180}
-                                    height={20}
+                                    width={150}
+                                    height={10}
                                 />
 
                                 <ul className="header-nav_elements">
