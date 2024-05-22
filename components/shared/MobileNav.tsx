@@ -41,7 +41,7 @@ const MobileNav = () => {
                                 <Image
                                     src="/assets/images/logo-name.svg"
                                     alt="logo"
-                                    width={240}
+                                    width={200}
                                     height={20}
                                 />
 
@@ -56,8 +56,8 @@ const MobileNav = () => {
                                                     <Image
                                                         src={link.icon}
                                                         alt="logo"
-                                                        width={27}
-                                                        height={27}
+                                                        width={25}
+                                                        height={25}
                                                         className={`${isActive && 'brightness-200'}`}
                                                     />
                                                     {link.label}
