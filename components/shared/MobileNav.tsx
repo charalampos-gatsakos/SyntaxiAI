@@ -31,8 +31,8 @@ const MobileNav = () => {
                             <Image
                                 src="/assets/icons/menu.svg"
                                 alt="menu"
-                                width={45}
-                                height={45}
+                                width={35}
+                                height={35}
                                 className="cursor-pointer"
                             />
                         </SheetTrigger>
@@ -41,7 +41,7 @@ const MobileNav = () => {
                                 <Image
                                     src="/assets/images/logo-name.svg"
                                     alt="logo"
-                                    width={280}
+                                    width={240}
                                     height={20}
                                 />
 
@@ -56,8 +56,8 @@ const MobileNav = () => {
                                                     <Image
                                                         src={link.icon}
                                                         alt="logo"
-                                                        width={35}
-                                                        height={35}
+                                                        width={27}
+                                                        height={27}
                                                         className={`${isActive && 'brightness-200'}`}
                                                     />
                                                     {link.label}
